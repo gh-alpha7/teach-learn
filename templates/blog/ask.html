@@ -1,0 +1,37 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>
+	ask
+</title>
+
+<body>
+	<div class="container">
+  <h2>Ask question:</h2>
+	<p id="top"><h3></h3></p>
+  
+  <form method="GET">
+    <div class="form-group">
+      <label for="usr">Topic:(add topic in here)</label>
+      <input type="text" class="form-control"  name="topic">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Question:</label>
+      <input type="text" class="form-control"  name="question">
+    </div>
+	<input type="submit" value="Submit">
+	
+	
+  </form>
+
+ <script>
+	document.getElementById("top").innerHTML=localStorage["topas"];
+</script>
+</div>
+
+</body>
+</html>

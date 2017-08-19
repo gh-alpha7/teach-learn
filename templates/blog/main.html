@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>
+	programming
+</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+	<style>
+		.topic{
+			background-color: #D3ECF5;
+			margin-top: 0;
+    			padding: 20px 20px 20px 40px;
+		}
+		.ques{
+			margin-top: 20px;
+			padding-left:60px;
+		}
+		.qu{
+			padding-left:40px;
+		}
+		.btn-group{
+			padding-left:900px;
+		}
+	</style>
+
+</head>
+	<div class="topic">
+	<h1><p id="subham">C++ programming</p></h1>
+	
+	
+	</div>
+	<div class="qu"><h2>Topics :
+	<div class="btn-group">
+    	<a href="top"><button type="button" class="btn btn-primary" >Add Topic</button></a>
+  	</div>
+	</h2>
+	</div>
+	
+	{%for pos in post%}
+	
+	<div>
+	<div class="container"><div class="jumbotron">
+	<div ><p id="topi" class="topi" ><a href="questions">{{pos.topic}}</a></p></div>
+	
+	</div>
+	</div>
+	
+	{%endfor%}
+	
+
+	<script>
+		
+		
+		
+	
+		var element= document.getElementsByClassName('topi');
+ 		for(var i=0;i<element.length;i++){
+ 	 		 
+    			  element[i].addEventListener("click", function(){foo(this)}, false);   
+		 }
+ 
+ 		function foo(y){
+ 			var str=y.innerHTML;
+			localStorage.setItem( "topas", str);
+		 }
+	
+		
+		
+	</script>
+
+
+
+</html>
+

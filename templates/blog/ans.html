@@ -1,0 +1,52 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>
+	ask
+</title>
+
+<body>
+	<div class="container">
+	
+  <h2><p id="top" >Ask question:</p></h2>
+  <h3><p id="top1"></p></h2>
+	
+	
+	
+  
+  
+  <form method="GET">
+	<div class="form-group">
+	<label for="usr">Topic:(write above topic in here)</label>
+      <input type="text" class="form-control"  name="top" id="topi" value="" >
+    </div>
+	<div class="form-group">
+	<label for="usr">Question:(write above question in here)</label>
+      <input type="text" class="form-control"  name="que" value="" >
+    </div>
+    <div class="form-group">
+      <label for="usr">User:</label>
+      <input type="text" class="form-control"  name="user" value="">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Answer:</label>
+      <input type="text" class="form-control"  name="answer" value="">
+    </div>
+	<input type="submit" value="Submit">
+	
+	
+  </form>
+
+<script>
+	var x=localStorage["topass"];
+	document.getElementById("top1").innerHTML=localStorage["topass"];
+	document.getElementById("top").innerHTML=localStorage["topas"];
+  </script>
+</div>
+
+</body>
+</html>

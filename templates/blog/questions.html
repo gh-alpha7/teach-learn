@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>
+	programming
+</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+	<style>
+		.topic{
+			background-color: #D3ECF5;
+			margin-top: 0;
+    			padding: 20px 20px 20px 40px;
+		}
+		.ques{
+			margin-top: 20px;
+			padding-left:60px;
+		}
+		.qu{
+			padding-left:40px;
+		}
+		.btn-group{
+			padding-left:900px;
+		}
+	</style>
+
+<script>
+  $(document).ready(function(){
+    var x=$(".class1>#top");
+    var y=$(".class1>#su");
+    var z=$(".calss1>#q2");
+	for(var i=0;i<x.length;i++)
+		{
+					var str=localStorage["topas"];
+					var s=$(str).text();
+					
+					
+					if(x[i].innerHTML==s)		
+						y[i].style.display="block";
+				
+			
+		}
+    
+    
+});
+
+</script>
+
+</head>
+	<div class="topic">
+	<h1><p id="topic"></p></h1>
+	
+	
+	</div>
+	<div class="qu"><h2>Question :
+	<div class="btn-group">
+    	<a href="ask"><button type="button" class="btn btn-primary" >Ask Question</button></a>
+  	</div>
+	</h2>
+	</div>
+
+	<p id="s"></p>
+	
+	{%for pos in post%}
+	<div class="class1" >
+	<p id="top" style="display:none">{{pos.topic}}</p>
+	
+	<div id="su" style="display:none" class="container"><div class="jumbotron">
+	<p id="ques" class="ques"  ><a href="ans">{{pos.question}}</a></p>
+	</div></div>
+	
+	
+	
+	
+	</div>
+	
+	{%endfor%}
+
+	<script>
+		document.getElementById("topic").innerHTML=localStorage["topas"];
+		
+		var element= document.getElementsByClassName('ques');
+ 		for(var i=0;i<element.length;i++){
+ 	 		 
+    			  element[i].addEventListener("click", function(){foo(this)}, false);   
+		 }
+ 
+ 		function foo(y){
+ 			var str=y.innerHTML;
+			localStorage.setItem( "topass", str);
+		 }
+		
+		
+	</script>
+
+
+
+</html>
+

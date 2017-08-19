@@ -1,0 +1,106 @@
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+	<title>
+		Answer
+	</title>
+
+	<style>
+		.headi{
+			background-color: #D3ECF5;
+			margin-top: 0;
+    			padding: 20px 20px 20px 40px;
+		}
+		
+		
+		.ans{
+			margin-top: 20px;
+		}
+		
+		.btn1,.btn2{
+			 margin-top:50px;
+			 display:inline;
+		}
+		.btn1{
+			margin-top:20px;
+			padding-left:40px;
+		}
+		.btn2{
+			margin-top:20px;
+			padding-left:1000px;
+		}
+		
+	</style>
+<script>
+ $(document).ready(function(){
+    var x=$(".ans>#to");
+    var y=$(".ans>#quu");
+    var z=$(".ans>#su");
+	for(var i=0;i<x.length;i++)
+		{
+					var str=localStorage["topas"];
+					var s=$(str).text();
+					var str1=localStorage["topass"];
+					var s1=$(str1).text();
+					
+					
+					if(x[i].innerHTML==s&&y[i].innerHTML==s1)		
+						z[i].style.display="block";
+				
+			
+		}
+    
+    
+});
+</script>
+</head>
+<body>
+	
+	<div class="headi">
+	<h1><p id="he"></p><h1>
+	<h4><p id="subh"></p></h4>
+	</div>
+	
+	<div class="btn1">
+	<div class="btn-group">
+    	<a href="an"><button type="button" class="btn btn-primary" >Want to answer</button></a>
+	</div>
+	</div>
+	<div class="btn2">
+	<div class="btn-group">
+	<a href="home"><button type="button" class="btn btn-primary" >Home</button></a>
+	</div>
+	</div>
+
+	
+	{%for a in ans%}
+	<div class='ans'>
+	<p id="to" style="display:none">{{a.topic}}</p>
+	<p id="quu" style="display:none">{{a.ques}}</p>
+	
+	<div  id="su" class="container" style="display:none"><div class="jumbotron">
+		<p class="usr">User:{{a.user_name}}</p>
+		<p class="ans">{{a.answer}}</p>
+	
+	</div>
+	</div>
+	{%endfor%}
+	
+	
+	
+	
+	<script>
+	document.getElementById("he").innerHTML=localStorage["topas"];
+	document.getElementById("subh").innerHTML=localStorage["topass"];
+	
+	
+ 	 </script>
+</body>
+</html>
